@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chenyu (Cheryl) Wang</title>
+<meta name="description" content="Chenyu (Cheryl) Wang — Ph.D. student in Nursing at the University of Michigan. Maternal health, sleep, digital health and machine learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1f2328;
+    --muted: #5d6470;
+    --faint: #8a909a;
+    --line: #e6e2da;
+    --accent: #00274c;      /* Michigan blue */
+    --accent-2: #b07d00;    /* muted maize */
+    --link: #1d4f91;
+    --chip: #f1eee6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12151a; --surface: #181c22; --text: #e7e9ec; --muted: #a6adb8; --faint: #7d8590;
+      --line: #2a3038; --accent: #c9d7ea; --accent-2: #e5b93c; --link: #8fb4e8; --chip: #222831;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151a; --surface: #181c22; --text: #e7e9ec; --muted: #a6adb8; --faint: #7d8590;
+    --line: #2a3038; --accent: #c9d7ea; --accent-2: #e5b93c; --link: #8fb4e8; --chip: #222831;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .wrap {
+    max-width: 1080px; margin: 0 auto; padding: 56px 32px 40px;
+    display: grid; grid-template-columns: 260px 1fr; gap: 64px;
+  }
+
+  /* Sidebar */
+  aside { position: sticky; top: 48px; align-self: start; }
+  .avatar {
+    width: 168px; height: 168px; border-radius: 50%; overflow: hidden;
+    background: var(--chip); border: 1px solid var(--line);
+    display: grid; place-items: center; margin-bottom: 20px;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .avatar span {
+    font-family: "Source Serif 4", Georgia, serif; font-size: 52px; color: var(--accent); letter-spacing: 1px;
+  }
+  h1 {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 700;
+    font-size: 28px; line-height: 1.2; margin: 0 0 6px; color: var(--text);
+  }
+  .role { color: var(--muted); font-size: 14.5px; margin: 0 0 18px; line-height: 1.5; }
+  .contact { list-style: none; padding: 0; margin: 0 0 22px; font-size: 14.5px; }
+  .contact li { display: flex; gap: 10px; align-items: center; padding: 3px 0; }
+  .contact svg { width: 16px; height: 16px; flex: none; color: var(--faint); }
+  nav.toc { border-top: 1px solid var(--line); padding-top: 16px; }
+  nav.toc a {
+    display: block; color: var(--muted); font-size: 14px; padding: 3px 0 3px 12px;
+    border-left: 2px solid transparent; margin-left: -12px;
+  }
+  nav.toc a:hover { color: var(--text); text-decoration: none; border-left-color: var(--accent-2); }
+  .theme-btn {
+    margin-top: 18px; background: none; border: 1px solid var(--line); color: var(--muted);
+    border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .theme-btn:hover { color: var(--text); }
+
+  /* Main */
+  main section { margin-bottom: 48px; }
+  h2 {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 23px;
+    margin: 0 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line); color: var(--text);
+  }
+  h2::before {
+    content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 2px;
+    background: var(--accent-2); margin-right: 12px; vertical-align: middle; transform: translateY(-2px);
+  }
+  p { margin: 0 0 14px; }
+  .lead { font-size: 17px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 14px; }
+
+  .interests { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+  .interest {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px;
+  }
+  .interest b { display: block; font-size: 14.5px; margin-bottom: 2px; color: var(--accent); }
+  .interest span { font-size: 14px; color: var(--muted); }
+
+  .news { list-style: none; padding: 0; margin: 0; }
+  .news li { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 6px 0; font-size: 15px; }
+  .news time { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 14px; }
+
+  .pubs { list-style: none; padding: 0; margin: 0; counter-reset: pub; }
+  .pubs li { position: relative; padding: 0 0 18px 40px; counter-increment: pub; }
+  .pubs li::before {
+    content: "[" counter(pub) "]"; position: absolute; left: 0; top: 1px;
+    color: var(--faint); font-size: 13.5px; font-variant-numeric: tabular-nums;
+  }
+  .pub-title { font-weight: 600; display: block; line-height: 1.45; }
+  .pub-authors { font-size: 14.5px; color: var(--muted); display: block; }
+  .pub-authors b { color: var(--text); font-weight: 600; text-decoration: underline; text-decoration-color: var(--accent-2); text-underline-offset: 3px; }
+  .pub-venue { font-size: 14.5px; font-style: italic; }
+  .tags { display: inline-flex; gap: 6px; margin-left: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 12px; font-style: normal; padding: 1px 8px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--muted); background: var(--chip);
+  }
+  a.tag:hover { color: var(--link); text-decoration: none; border-color: var(--link); }
+  .tag.status { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 40%, transparent); background: transparent; }
+
+  .entry { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; margin-bottom: 20px; }
+  .entry h3 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.4; }
+  .entry .date { color: var(--faint); font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .entry .sub { grid-column: 1 / -1; color: var(--muted); font-size: 14.5px; }
+  .entry ul { grid-column: 1 / -1; margin: 6px 0 0; padding-left: 18px; font-size: 14.5px; }
+  .entry ul li { margin-bottom: 3px; }
+
+  .edu { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start; }
+  .edu .entry { margin-bottom: 22px; }
+  .logo {
+    position: relative; width: 56px; height: 56px; border-radius: 50%; overflow: hidden;
+    background: var(--c1); display: grid; place-items: center;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+  .logo span { color: var(--c2); font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 18px; letter-spacing: .5px; }
+
+  details.more { margin-top: 4px; }
+  details.more summary {
+    cursor: pointer; color: var(--link); font-size: 14.5px; margin-bottom: 16px; list-style: none;
+  }
+  details.more summary::-webkit-details-marker { display: none; }
+  details.more summary::before { content: "+ "; }
+  details.more[open] summary::before { content: "− "; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .plain { list-style: none; padding: 0; margin: 0; }
+  .plain li { padding: 5px 0; font-size: 15px; border-bottom: 1px dashed var(--line); display: flex; justify-content: space-between; gap: 12px; }
+  .plain li:last-child { border-bottom: 0; }
+  .plain .date { color: var(--faint); font-size: 14px; white-space: nowrap; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--chip); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; font-size: 14px; }
+
+  footer { border-top: 1px solid var(--line); padding-top: 16px; color: var(--faint); font-size: 13px; }
+
+  @media (max-width: 860px) {
+    .wrap { grid-template-columns: 1fr; gap: 32px; padding: 32px 16px; }
+    aside { position: static; text-align: left; }
+    .avatar { width: 120px; height: 120px; }
+    .avatar span { font-size: 40px; }
+    nav.toc { display: none; }
+    .interests, .two-col { grid-template-columns: 1fr; }
+    .news li { grid-template-columns: 1fr; gap: 0; }
+    .entry { grid-template-columns: 1fr; }
+    .entry .date { order: -1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <aside>
+    <div class="avatar">
+      <!-- Put your photo next to this file as profile.jpg; initials show until then -->
+      <img src="profile.jpg" alt="Photo of Chenyu (Cheryl) Wang" onerror="this.remove()">
+      <span aria-hidden="true">CW</span>
+    </div>
+    <h1>Chenyu (Cheryl) Wang</h1>
+    <p class="role">Ph.D. Student in Nursing<br>University of Michigan, Ann Arbor<br><span class="small">BSN, BA, MPH, CPH</span></p>
+    <ul class="contact">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <a href="mailto:cywangg@umich.edu">cywangg@umich.edu</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 1 9l11 6 9-4.9V17M5 11.2V16c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.8"/></svg>
+        <a href="https://scholar.google.com/citations?user=JMOYnBsAAAAJ&amp;hl=en">Google Scholar</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 8v8M9 6v.01M12 16v-4.5a2.5 2.5 0 0 1 5 0V16"/></svg>
+        <a href="https://orcid.org/0009-0000-0993-3630">ORCID</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h6"/></svg>
+        <a href="CV_Cheryl_Wang.pdf">Curriculum Vitae</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <span>400 NIB, Ann Arbor, MI</span>
+      </li>
+    </ul>
+    <nav class="toc" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" type="button">Toggle theme</button>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="lead">I am a Ph.D. student in Nursing at the <a href="https://nursing.umich.edu/">University of Michigan School of Nursing</a>. My research sits at the intersection of maternal health and digital health: I study how sleep and circadian characteristics during pregnancy relate to outcomes such as preterm birth and preeclampsia, and how data science and machine learning can help monitor and intervene on health behaviors.</p>
+      <p>Before Michigan, I earned an MPH in Epidemiology and Biostatistics, with a certificate in Artificial Intelligence and Big Data Analytics for Public Health, from <a href="https://brownschool.wustl.edu/">Washington University in St. Louis</a>. Earlier, I completed a B.S. in Nursing and a B.A. in Theory and History of Arts at <a href="https://english.pku.edu.cn/">Peking University</a>. I am a Certified in Public Health (CPH) professional.</p>
+
+      <div class="interests">
+        <div class="interest"><b>Maternal health</b><span>Sleep monitoring and risks of adverse pregnancy outcomes</span></div>
+        <div class="interest"><b>Digital health</b><span>Health data analysis and machine learning</span></div>
+        <div class="interest"><b>ML in nursing &amp; public health</b><span>Behavior analysis and intervention across nursing, physiology and public health</span></div>
+        <div class="interest"><b>Health equity</b><span>Evidence-based interventions in diverse populations</span></div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p class="muted small">See <a href="https://scholar.google.com/citations?user=JMOYnBsAAAAJ&amp;hl=en">Google Scholar</a> for the latest list.</p>
+      <ol class="pubs" reversed>
+        <li>
+          <span class="pub-title">Hormonal contraception and free estradiol concentrations: a cross-sectional analysis of data from the National Health and Nutrition Examination Survey</span>
+          <span class="pub-authors">E. S. Barker, T. Issa, T. Lan, <b>C. Wang</b>, M. Doering, J. Reeves, T. Madden, J. L. Lowder, S. Sutcliffe</span>
+          <span class="pub-venue">American Journal of Obstetrics and Gynecology</span><span class="tags"><span class="tag status">under review</span></span>
+        </li>
+        <li>
+          <span class="pub-title">A Scoping Review of Microsimulation Models on Obesity-Related Policy Evaluation</span>
+          <span class="pub-authors">Z. Cao, Y. Fang, <b>C. Wang</b>, R. An</span>
+          <span class="pub-venue">Nutrients, 18(1):73, 2026</span><span class="tags"><a class="tag" href="https://doi.org/10.3390/nu18010073">paper</a></span>
+        </li>
+        <li>
+          <span class="pub-title">AI Applications to Reduce Loneliness Among Older Adults: A Systematic Review of Effectiveness and Technologies</span>
+          <span class="pub-authors">Y. Yang, <b>C. Wang</b>, X. Xiang, R. An</span>
+          <span class="pub-venue">Healthcare, 13(5):446, 2025</span><span class="tags"><a class="tag" href="https://doi.org/10.3390/healthcare13050446">paper</a></span>
+        </li>
+        <li>
+          <span class="pub-title">GPT Models Can Perform Thematic Analysis in Public Health Studies, Akin to Qualitative Researchers</span>
+          <span class="pub-authors">Y. Yang, C. Alba, <b>C. Wang</b>, X. Wang, J. Anderson, R. An</span>
+          <span class="pub-venue">Journal of Social Computing, 5(4), 2024</span><span class="tags"><a class="tag" href="https://doi.org/10.23919/JSC.2024.0024">paper</a></span>
+        </li>
+        <li>
+          <span class="pub-title">Use of Artificial Intelligence-based Chatbots to Promote Physical Activity: A Systematic Review of Interventions</span>
+          <span class="pub-authors">F. Yang, <b>C. Wang</b>, R. An</span>
+          <span class="pub-venue">Kinesiology Review, 2024</span><span class="tags"><a class="tag" href="https://scholar.google.com/scholar?q=%22Use+of+Artificial+Intelligence-based+Chatbots+to+Promote+Physical+Activity%22">scholar</a></span>
+        </li>
+        <li>
+          <span class="pub-title">ChatGPT Comes to Campus: Unveiling Core Themes in AI Policies Across U.S. Universities with Large Language Models</span>
+          <span class="pub-authors">C. Alba, X. Wang, <b>C. Wang</b>, R. An</span>
+          <span class="pub-venue">Proceedings of the 56th ACM Technical Symposium on Computer Science Education (SIGCSE), v2, 2024</span><span class="tags"><a class="tag" href="https://scholar.google.com/scholar?q=%22ChatGPT+Comes+to+Campus%22+AI+policies">scholar</a></span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <!-- School logos: put images/umich.png, images/washu.png, images/pku.png next to this file -->
+      <div class="edu">
+        <div class="logo" style="--c1:#00274c;--c2:#ffcb05"><img src="images/umich.png" alt="University of Michigan logo" onerror="this.remove()"><span>M</span></div>
+        <div class="entry">
+          <h3>University of Michigan, Ann Arbor</h3><span class="date">Expected 2029</span>
+          <span class="sub">Ph.D. in Nursing</span>
+        </div>
+      </div>
+      <div class="edu">
+        <div class="logo" style="--c1:#a51417;--c2:#ffffff"><img src="images/washu.png" alt="Washington University in St. Louis logo" onerror="this.remove()"><span>WU</span></div>
+        <div class="entry">
+          <h3>Washington University in St. Louis</h3><span class="date">Aug 2024</span>
+          <span class="sub">MPH, Epidemiology and Biostatistics<br>Certificate in Artificial Intelligence and Big Data Analytics for Public Health (AIBDA)</span>
+        </div>
+      </div>
+      <div class="edu">
+        <div class="logo" style="--c1:#8c0000;--c2:#ffffff"><img src="images/pku.png" alt="Peking University logo" onerror="this.remove()"><span>北大</span></div>
+        <div class="entry">
+          <h3>Peking University</h3><span class="date">Jun 2022</span>
+          <span class="sub">B.S. in Nursing<br>B.A. in Theory and History of Arts</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills &amp; Certifications</h2>
+      <div class="chips" style="margin-bottom:14px">
+        <span class="chip">SAS</span><span class="chip">R</span><span class="chip">Python</span><span class="chip">SPSS</span><span class="chip">SQL</span><span class="chip">Tableau</span>
+      </div>
+      <p class="small"><b>Certification:</b> Certified in Public Health (CPH), National Board of Public Health Examiners<br>
+      <b>Languages:</b> English, Mandarin</p>
+    </section>
+
+    <footer>
+      Last updated October 2026 · © Chenyu (Cheryl) Wang
+    </footer>
+  </main>
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('themeBtn');
+    try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+    btn.addEventListener('click', function () {
+      var cur = root.getAttribute('data-theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
